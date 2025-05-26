@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahmed badawi Hassan - Personal Website</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+    body {
+      margin: 0;
+      background: #121212;
+      color: #eee;
+      font-family: 'Roboto', sans-serif;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 0 30px #00bcd4;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #00bcd4;
+      margin-bottom: 5px;
+      font-size: 2.8rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .skills {
+      background: #272727;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      font-size: 1.1rem;
+    }
+
+    .skills h3 {
+      color: #00bcd4;
+      margin-top: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 30px;
+    }
+
+    nav button {
+      background: transparent;
+      border: 2px solid #00bcd4;
+      color: #00bcd4;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav button.active,
+    nav button:hover {
+      background: #00bcd4;
+      color: #121212;
+    }
+
+    section {
+      display: none;
+      margin-top: 30px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .links a {
+      color: #00bcd4;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-info {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      text-align: center;
+      color: #bbb;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Ahmed badawi Hassan</h1>
+    <nav>
+      <button class="tab-button active" data-tab="about">About Me</button>
+      <button class="tab-button" data-tab="contact">Contact</button>
+    </nav>
+
+    <section id="about" class="active">
+      <p>Student at Level One - Artificial Intelligence Faculty</p>
+
+      <div class="skills">
+        <h3>Skills:</h3>
+        <p>Mathematics, Programming, English</p>
+        <p>Programming languages: C#, HTML, CSS, Python, SQL, Java</p>
+      </div>
+
+      <div class="links" style="text-align:center;">
+        <a href="https://www.facebook.com/share/19yWT9TfFe/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/lbdwy5363?igsh=NTd0cnEzdTB3bWF3" target="_blank"
+          rel="noopener noreferrer">Instagram</a>
+      </div>
+
+      <p class="contact-info">Phone: 01002030292</p>
+    </section>
+
+    <section id="contact">
+      <h2 style="color:#00bcd4; text-align:center;">Contact Me</h2>
+      <p style="text-align:center;">Feel free to reach out via social media or phone.</p>
+      <p style="text-align:center; font-size:1.2rem; color:#bbb;">Phone: 01002030292</p>
+      <p style="text-align:center;">
+        <a href="https://www.facebook.com/share/19yWT9TfFe/" target="_blank" rel="noopener noreferrer">Facebook</a> |
+        <a href="https://www.instagram.com/lbdwy5363?igsh=NTd0cnEzdTB3bWF3" target="_blank"
+          rel="noopener noreferrer">Instagram</a>
+      </p>
+    </section>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-button');
+    const sections = document.querySelectorAll('section');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        // إزالة التفعيل من جميع الأزرار
+        buttons.forEach(btn => btn.classList.remove('active'));
+        // إظهار القسم المناسب وإخفاء الباقي
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        button.classList.add('active');
+        const tab = button.getAttribute('data-tab');
+        document.getElementById(tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
